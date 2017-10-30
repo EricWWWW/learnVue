@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+            display: inline-block;
+        }
+        a{
+            text-decoration: none;
+        }
+        .show{
+            height:200px;
+            width:300px;
+            background:#999;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li>
+            <router-link to="/home">首页</router-link>
+        </li>
+        <li>
+            <router-link to="/news">新闻</router-link>
+        </li>
+        <li>
+            <router-link to="/hot">热点</router-link>
+        </li>
+    </ul>
+    <div class="show">
+        <router-view>
+
+        </router-view>
+    </div>
+</div>
+
+
+<template id="home">
+    <div>
+        <h2>首页</h2>
+        <ul>
+            <li>
+                <router-link to="/home/film">film</router-link>
+            </li>
+            <li>
+                <router-link to="/home/tv">tv</router-link>
+            </li>
+        </ul>
+
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+</template>
+
+<template id="news">
+    <div>
+        <h2>新闻</h2>
+
+    </div>
+</template>
+
+<template id="hot">
+    <div>
+        <h2>热点</h2>
+
+    </div>
+</template>
+
+<template id="film">
+    <div>
+        <p>羞羞的铁拳，初恋这件小事,还有传递过来的参数：{{ $route.params.id }}</p>
+
+    </div>
+</template>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    //模块名称大写
+    var Home = Vue.extend({
+        template:'#home',
+    });
+
+    var News = Vue.extend({
+        template:'#news',
+    });
+
+    var Hot = Vue.extend({
+        template:'#hot',
+    })
+
+    var Film = Vue.extend({
+        template:'#film'
+    })
+
+
+    var arr = [
+        {path:'/home',component:Home,children:[
+            {path:':id',component:Film}
+        ]},
+        {path:'/news',component:News},
+        {path:'/hot',component:Hot},
+    ];
+
+    var router = new VueRouter({
+        routes:arr
+    })
+
+
+
+    var vm = new Vue({
+        el:'#demo',
+        data:{
+
+        },
+        router:router,
+    })
+</script>
+</body>
+
+</html>
