@@ -18,6 +18,9 @@
       </div>
     </div>
     <div class="section">
+	    <book-list :books="latestUpdated" heading="最新更新">
+
+	    </book-list>
       <div class="book-list">
         <div class="header">
           <div class="heading">新书上架</div>
@@ -39,9 +42,9 @@
       </div>
     </div>
     <div class="section">
-      <div>
-        编辑推荐
-      </div>
+	    <book-list :books="recommended" heading="编辑推荐">
+
+	    </book-list>
     </div>
   </div>
 </template>
