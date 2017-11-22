@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/eleme-master/.idea/eleme.iml" filepath="$USER_HOME$/Desktop/eleme-master/.idea/eleme.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learn_Vue.iml" filepath="$PROJECT_DIR$/.idea/learn_Vue.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/tis_website/.idea/tis_website.iml" filepath="$USER_HOME$/Desktop/tis_website/.idea/tis_website.iml" />
     </modules>

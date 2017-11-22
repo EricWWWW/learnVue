@@ -7,5 +7,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="tis_website" />
+    <orderEntry type="module" module-name="eleme" />
   </component>
 </module>
