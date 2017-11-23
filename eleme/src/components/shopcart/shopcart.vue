@@ -8,7 +8,14 @@
 
   export default {
     props: {
-
+        deliveryPrice: {
+            type: Number,
+            default: 0
+        },
+        minPrice: {
+            type: Number,
+            default: 0
+        }
     },
     data () {
       return {
@@ -22,8 +29,11 @@
 
     },
     components: {
-    }
+    },
+	mounted:function(){
+        console.log(this.minPrice);
+	}
   };
 </script>
-<style lang="less" >
+<style lang="less" f>
 </style>

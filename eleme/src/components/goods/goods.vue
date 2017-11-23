@@ -2,7 +2,10 @@
 	<div class="good">
 		123
 		<div>
-			sho
+			footer
+			<shopCart ref="shopCart" :min-price="seller.minPrice" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice">
+
+			</shopCart>
 		</div>
 	</div>
 </template>
@@ -25,7 +28,9 @@
         },
         computed: {},
         methods: {},
-        components: {}
+        components: {
+            shopCart,
+        }
     };
 </script>
 <style lang="less">
